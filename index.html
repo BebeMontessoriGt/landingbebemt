@@ -1,8 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<head> <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '639817445387681');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=639817445387681&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+// Evento cuando alguien completa el formulario
+function trackLead() {
+  fbq('track', 'Lead', {
+    content_name: 'Inscripción Bebé Montessori',
+    content_category: 'Educación',
+    value: 575,
+    currency: 'GTQ'
+  });
+}
+
+// Evento cuando alguien hace clic en WhatsApp
+function trackInitiateCheckout() {
+  fbq('track', 'InitiateCheckout', {
+    content_name: 'Contacto WhatsApp',
+    content_category: 'Consulta',
+    value: 575,
+    currency: 'GTQ'
+  });
+}
+</script>
     <title>Bebé Montessori - Desarrollo Integral para tu Bebé</title>
     <style>
         * {
@@ -587,12 +624,17 @@
                     <div class="cta-primary-container">
                         <a href="https://wa.link/exkklo" target="_blank" class="cta-button primary">
                             Reservar mi lugar por WhatsApp 📱
-                        </a>
+                        <a href="https://wa.me/52XXXXXXXX" onclick="trackInitiateCheckout()" target="_blank">
+  Contactar por WhatsApp
+</a>
                     </div>
                     <div class="cta-secondary-container">
-                        <a href="https://forms.gle/Zw81ChXHZqq72EbY8" target="_blank" class="cta-button secondary">
+                        <a href="https://forms.gle/Zw81ChXHZqq72EbY8" target="_blank" class="cta-button secondary"> 
                             Enviar información por formulario 📝
-                        </a>
+                        </a><form onsubmit="trackLead()">
+  <!-- Tu formulario actual -->
+  <button type="submit">Inscribir mi bebé</button>
+</form>
                     </div>
                     <p class="cta-note">💬 Respuesta inmediata por WhatsApp • 📋 Formulario para información detallada</p>
                 </div>
